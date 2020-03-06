@@ -79,6 +79,9 @@ class CLatexBuild{
 		$cmd .= '-output-directory '.escapeshellarg(WORKSPACE.'/'.$_SESSION['project'].'/'.BUILD_DIR);
 		$cmd .= ' -interaction=nonstopmode '.escapeshellarg(escapeshellcmd($mainFile));
 		
+		//compile twise
+        $cmd = $cmd."; ".$cmd;
+		
 		$this->process->setCommand($cmd);
 		
 		$this->process->start();
