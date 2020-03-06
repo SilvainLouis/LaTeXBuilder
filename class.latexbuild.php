@@ -81,6 +81,10 @@ class CLatexBuild{
 		
 		//compile twise
         $cmd = $cmd."; ".$cmd;
+		//todo : compile avec cet order :
+		//	1. pdflatex
+		//	2. any auxiliary program: biber (or bibtex, depending on how the bibliography is built), makeindex (if an index is used), makeglossaries (if glossaries is used), …
+		//	3. pdflatex (at least twice)
 		
 		$this->process->setCommand($cmd);
 		
